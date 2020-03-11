@@ -12,6 +12,12 @@ defaults:
 
 jobs:
 
+  shfmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ./.validate-shfmt.sh
+
   test:
     strategy:
       matrix:
